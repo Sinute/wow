@@ -1,0 +1,28 @@
+<?if($urls):?>
+  <div class="pagination">
+    <ul>
+      <?if(1 == $currentPage):?>
+        <li class="disabled"><span>|<</span></li>
+        <li class="disabled"><span><<</span></li>
+      <?else:?>
+        <li><a href="<?=$firstUrl?>">|<</a></li>
+        <li><a href="<?=$prevUrl?>"><<</a></li>
+      <?endif;?>
+      <?foreach($urls as $i => $url):?>
+        <?if($currentPage == $i):?>
+          <li class="active"><span><?=$i?></span></li>
+        <?else:?>
+          <li><a href="<?=$url?>"><?=$i?></a></li>
+        <?endif;?>
+      <?endforeach;?>
+      <?if($endPage == $currentPage):?>
+        <li class="disabled"><span>>></span></li>
+        <li class="disabled"><span>>|</span></li>
+      <?else:?>
+        <li><a href="<?=$nextUrl?>">>></a></li>
+        <li><a href="<?=$lastUrl?>">>|</a></li>
+      <?endif;?>
+    </ul>
+  </div>
+<?endif;?>
+

@@ -1,0 +1,19 @@
+<?include "./Tpl/Search/search.html" ?>
+<script>
+  $(".search-form").attr("action", "<?=C('HOST_URL')?>/Admin/AddItem");
+  $(".media").unbind("click");
+  $(".media").click(function() {
+    if($(this).parent().hasClass("disabled")) return;
+    $(this).parent().addClass("disabled");
+    var itemId = $(this).attr('item-id');
+    var media = $(this);
+    $.post('/wowAH/AdminApi/AddSearchItem', {'itemId': itemId}, function(result) {
+      if(result['status']) {
+        media.find(".media-body .media-heading").text(media.find(".media-body .media-heading").text() + " (已添加)");
+      }else{
+        alert(result['info']);
+        media.parent().removeClass("disabled");
+      }
+    }, 'json');
+  });
+</script>

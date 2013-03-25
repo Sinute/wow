@@ -1,0 +1,232 @@
+/* tooltip */
+.ui-tooltip { border: 1px solid #353837; color: #fff; background-color: rgba(15, 15, 15, 0.9); padding: 10px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: #000 0 0 15px; -webkit-box-shadow: #000 0 0 15px; box-shadow: #000 0 0 15px; font-size: 12px; max-width: 400px; }
+.ui-tooltip h3 { font-size: 16px; font-weight: normal; margin: 0; padding: 0; border: 0; outline: 0; line-height: 20px;} /* title of the tooltip */
+.ui-tooltip li { clear: both; line-height: 15px;}
+.ui-tooltip a { color: white; }
+.ui-tooltip .tip { border-bottom: 0; }
+/*.ui-tooltip .float-right { padding-left: 30px; }*/
+.ui-tooltip .frame-32 { position: absolute; left: -60px; top: -10px; }
+.ui-tooltip .frame-36 { position: absolute; left: -56px; top: -10px; }
+.ui-tooltip .frame-56 { position: absolute; left: -75px; top: -10px; }
+.ui-tooltip .frame-150 { position: absolute; left: -175px; top: -10px; }
+.ui-tooltip .tooltip-content { position: relative; }
+.ui-tooltip .tooltip-list { margin-top: 10px; }
+.ui-tooltip .tooltip-list li { margin: 1px 0; }
+.ui-tooltip .tooltip-list .icon-frame { float: left; margin-right: 5px; }
+
+/* wow colors */
+
+/* item details and tooltips */
+.ui-tooltip .color-tooltip-yellow { color: #ffd100 !important; }
+.ui-tooltip .color-tooltip-red { color: #f00 !important; }
+.ui-tooltip .color-tooltip-green { color: #0f0 !important; }
+.ui-tooltip .color-tooltip-blue { color: #71D5FF !important; }
+.ui-tooltip .color-tooltip-beige { color: #FFFF98 !important; }
+
+/* faction */
+.ui-tooltip .color-tooltip-alliance { color: #247FAA; }
+.ui-tooltip .color-tooltip-horde { color: #b30000; }
+
+/* item quality */
+.ui-tooltip .color-q0, .color-q0 a { color: #9d9d9d !important; } /* poor (gray) */
+.ui-tooltip .color-q1, .color-q1 a { color: #ffffff !important; } /* common (white) */
+.ui-tooltip .color-q2, .color-q2 a { color: #1eff00 !important; } /* uncommon (green) */
+.ui-tooltip .color-q3, .color-q3 a { color: #0081ff !important; } /* #0070dd rare (blue) */
+.ui-tooltip .color-q4, .color-q4 a { color: #c600ff !important; } /* #a335ee epic (purple) */
+.ui-tooltip .color-q5, .color-q5 a { color: #ff8000 !important; } /* lengendary (orange) */
+.ui-tooltip .color-q6, .color-q6 a { color: #e5cc80 !important; } /* artifact (gold) */
+.ui-tooltip .color-q7, .color-q7 a { color: #e5cc80 !important; } /* heirloom (gold) */
+
+/* class */
+.ui-tooltip .color-c1,  .color-c1 a { color: #c69b6d !important; } /* warrior */
+.ui-tooltip .color-c2,  .color-c2 a { color: #f48cba !important; } /* paladin */
+.ui-tooltip .color-c3,  .color-c3 a, .color-g2 { color: #aad372 !important; } /* hunter */
+.ui-tooltip .color-c4,  .color-c4 a, .color-g1 { color: #fff468 !important; } /* rogue */
+.ui-tooltip .color-c5,  .color-c5 a { color: #f0ebe0 !important; } /* priest */
+.ui-tooltip .color-c6,  .color-c6 a { color: #c41e3b !important; } /* death knight */
+.ui-tooltip .color-c7,  .color-c7 a { color: #2359ff !important; } /* shaman */
+.ui-tooltip .color-c8,  .color-c8 a, .color-g3 { color: #68ccef !important; } /* mage */
+.ui-tooltip .color-c9,  .color-c9 a { color: #9382c9 !important; } /* warlock */
+.ui-tooltip .color-c10, .color-c10 a { color: #00ffba !important; } /* monk */
+.ui-tooltip .color-c11, .color-c11 a, .color-g4 { color: #ff7c0a !important; } /* druid */
+
+/* expansion */
+.ui-tooltip .color-ex0, .color-exp0 { color: #fff468 !important; } /* classic */
+.ui-tooltip .color-ex1, .color-exp1 { color: #aad372 !important; } /* the burning crusade */
+.ui-tooltip .color-ex2, .color-exp2 { color: #68ccef !important; } /* wrath of the lich king */
+.ui-tooltip .color-ex3, .color-exp3 { color: #ff7c0a !important; } /* cataclysm */
+.ui-tooltip .color-ex4, .color-exp4 { color: #00ffba !important; } /* Mists of Pandaria */
+
+/* 50% opaque dotted underlines for links with a tooltip */
+.ui-tooltip .color-c1  a.tip { border-bottom: 1px dotted #634e37; }
+.ui-tooltip .color-c2  a.tip { border-bottom: 1px dotted #7a465d; }
+.ui-tooltip .color-c3  a.tip { border-bottom: 1px dotted #556a39; }
+.ui-tooltip .color-c4  a.tip { border-bottom: 1px dotted #807a34; }
+.ui-tooltip .color-c5  a.tip { border-bottom: 1px dotted #808080; }
+.ui-tooltip .color-c6  a.tip { border-bottom: 1px dotted #620f1e; }
+.ui-tooltip .color-c7  a.tip { border-bottom: 1px dotted #122d80; }
+.ui-tooltip .color-c8  a.tip { border-bottom: 1px dotted #346678; }
+.ui-tooltip .color-c9  a.tip { border-bottom: 1px dotted #4a4165; }
+.ui-tooltip .color-c11 a.tip { border-bottom: 1px dotted #803e05; }
+
+.ui-tooltip .color-c1  a.tip, .border-c1  { border-color: #634e37; }
+.ui-tooltip .color-c2  a.tip, .border-c2  { border-color: #7a465d; }
+.ui-tooltip .color-c3  a.tip, .border-c3  { border-color: #556a39; }
+.ui-tooltip .color-c4  a.tip, .border-c4  { border-color: #807a34; }
+.ui-tooltip .color-c5  a.tip, .border-c5  { border-color: #808080; }
+.ui-tooltip .color-c6  a.tip, .border-c6  { border-color: #620f1e; }
+.ui-tooltip .color-c7  a.tip, .border-c7  { border-color: #122d80; }
+.ui-tooltip .color-c8  a.tip, .border-c8  { border-color: #346678; }
+.ui-tooltip .color-c9  a.tip, .border-c9  { border-color: #4a4165; }
+.ui-tooltip .color-c11 a.tip, .border-c11 { border-color: #803e05; }
+
+/* difficulty */
+.ui-tooltip .color-d1, .color-d1 a { color: #ff8040 !important; } /* orange */
+.ui-tooltip .color-d2, .color-d2 a { color: #ffff00 !important; } /* yellow */
+.ui-tooltip .color-d3, .color-d3 a { color: #40bf40 !important; } /* green */
+.ui-tooltip .color-d4, .color-d4 a { color: #808080 !important; } /* gray */
+.ui-tooltip .color-d5, .color-d5 a { color: #88aaff !important; } /* light blue */
+.ui-tooltip .color-d6, .color-d6 a { color: #ff0000 !important; } /* red */
+
+/* skill difficulty */
+.ui-tooltip .color-s0 { color: red; }
+.ui-tooltip .color-s1 { color: #FF8040; }
+.ui-tooltip .color-s2 { color: #FFFF00; }
+.ui-tooltip .color-s3 { color: #40BF40; }
+.ui-tooltip .color-s4 { color: #808080; }
+
+/* link hover color for the above */
+.ui-tooltip a.color-q0:hover, a.color-q1:hover, a.color-q2:hover, a.color-q3:hover, a.color-q4:hover, a.color-q5:hover, a.color-q6:hover, a.color-q7:hover,
+.ui-tooltip .color-q0 a:hover, .color-q1 a:hover, .color-q2 a:hover, .color-q3 a:hover, .color-q4 a:hover, .color-q5 a:hover, .color-q6 a:hover, .color-q7 a:hover,
+.ui-tooltip a.color-c1:hover, a.color-c2:hover, a.color-c3:hover, a.color-c4:hover, a.color-c5:hover, a.color-c6:hover, a.color-c7:hover, a.color-c8:hover, a.color-c9:hover, a.color-c10:hover, a.color-c11:hover,
+.ui-tooltip .color-c1 a:hover, .color-c2 a:hover, .color-c3 a:hover, .color-c4 a:hover, .color-c5 a:hover, .color-c6 a:hover, .color-c7 a:hover, .color-c8 a:hover, .color-c9 a:hover, .color-c10 a:hover, .color-c11 a:hover,
+.ui-tooltip a.color-d1:hover, a.color-d2:hover, a.color-d3:hover, a.color-d4:hover, a.color-d5:hover, a.color-d6:hover,
+.ui-tooltip .color-d1 a:hover, .color-d2 a:hover, .color-d3 a:hover, .color-d4 a:hover, .color-d5 a:hover, .color-d6 a:hover
+{ color: #fff !important }
+
+/* tooltips */
+.ui-tooltip .character-tooltip { min-width: 150px; }
+.ui-tooltip .wiki-tooltip { min-width: 250px; }
+.ui-tooltip .wiki-tooltip .wiki-list { margin-top: 10px; }
+.ui-tooltip .wiki-tooltip .wiki-list li { margin: 2px 0; }
+.ui-tooltip .wiki-tooltip .wiki-list .item-link { line-height: 16px; }
+.ui-tooltip .wiki-tooltip .wiki-list .item-link .frame-14 { float: left; margin-right: 5px; }
+.ui-tooltip .wiki-tooltip .indent { padding-left: 10px }
+.ui-tooltip .wiki-tooltip .indent-small { padding-left: 5px }
+
+.ui-tooltip .item-specs .item-link { height: 22px; line-height: 22px; margin: 2px 0; font-weight: normal; background-repeat: no-repeat; }
+.ui-tooltip .item-specs { margin-top: 10px; }
+.ui-tooltip .item-specs li { margin: 1px 0; padding: 0; }
+.ui-tooltip .item-specs .indent { padding-left: 10px }
+.ui-tooltip .item-specs .indent-small { padding-left: 5px }
+.ui-tooltip .item-specs .indent-top { padding-top: 10px }
+.ui-tooltip .item-specs .icon-socket { float: left; margin-right: 4px; margin-top: 1px; }
+.ui-tooltip .item-specs .reforge-arrow { position: relative; top: -1px; font-size: 10px; }
+.ui-tooltip .item-specs a.color-q1:hover { text-decoration: underline; }
+.ui-tooltip .item-specs .transmog-name { color:#ff80ff }
+
+.ui-tooltip .character-tooltip .character-achievementpoints { margin-top: 4px; }
+.ui-tooltip .character-tooltip .character-spec { margin-top: 10px; }
+
+.ui-tooltip .character-spec { display: block; }
+.ui-tooltip .character-spec .icon,
+.ui-tooltip .character-spec .name { float: left; height: 14px; line-height: 15px; }
+.ui-tooltip .character-spec .icon { margin-right: 5px; }
+.ui-tooltip .character-spec .name { color: #F5EBD1; }
+
+.ui-tooltip .character-achievementpoints { display: block; float: left; padding-right: 11px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/achievements.gif") no-repeat right center; }
+
+/* framed icons */
+.ui-tooltip .icon-frame { display: inline-block; overflow: hidden; padding: 1px; background-color: #000; background-position: 1px 1px; background-repeat: no-repeat; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; border: 1px solid #434445; border-bottom-color: #2f3032; border-top-color: #b1b2b4; }
+.ui-tooltip .icon-frame img { display: block; vertical-align: bottom; }
+.ui-tooltip .icon-frame.frame-36,
+.ui-tooltip .icon-frame.frame-50,
+.ui-tooltip .icon-frame.frame-56 { height: 56px; width: 56px; -moz-box-shadow: #000 0 0 10px; -webkit-box-shadow: #000 0 0 10px; box-shadow: #000 0 0 10px; }
+.ui-tooltip .icon-frame.frame-12 { height: 12px; width: 12px; }
+.ui-tooltip .icon-frame.frame-14 { height: 14px; width: 14px; }
+.ui-tooltip .icon-frame.frame-18 { height: 18px; width: 18px; }
+.ui-tooltip .icon-frame.frame-27 { height: 27px; width: 27px; }
+.ui-tooltip .icon-frame.frame-36 { height: 36px; width: 36px; }
+.ui-tooltip .icon-frame.frame-50 { height: 50px; width: 50px; }
+.ui-tooltip .icon-frame-gloss { display: block; height: 76px; width: 76px; background-position: 50% 50%; background-repeat: no-repeat; }
+.ui-tooltip .icon-frame-gloss .frame { display: block; background: url("http://www.battlenet.com.cn/wow/static/images/icons/frames/frame-icon.png") no-repeat; height: 76px; width: 76px; }
+.ui-tooltip .circle-frame { border-width: 2px; border-left-color: #B1B2B4; -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px; }
+.ui-tooltip .table .icon-frame { vertical-align: middle; }
+
+/* socket icons */
+.ui-tooltip .icon-socket { display: block; position: relative; width: 15px; height: 15px; }
+.ui-tooltip .icon-socket a.gem { display: block; width: 15px; height: 15px; }
+.ui-tooltip .icon-socket a.gem img { display: block; width: 13px; height: 13px; padding: 1px 0 0 1px; }
+.ui-tooltip .icon-socket .empty { position: absolute; left: 1px; top: 1px; width: 13px; height: 13px; }
+.ui-tooltip .icon-socket .frame { position: absolute; left: 0; top: 0; width: 15px; height: 15px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/frames/sockets.png") no-repeat; }
+.ui-tooltip .icon-socket.socket-1  .empty { background-color: #29292a; } /* Meta */
+.ui-tooltip .icon-socket.socket-2  .empty { background-color: #301010; } /* Red */
+.ui-tooltip .icon-socket.socket-4  .empty { background-color: #403010; } /* Yellow */
+.ui-tooltip .icon-socket.socket-8  .empty { background-color: #102040; } /* Blue */
+.ui-tooltip .icon-socket.socket-14 .empty { background-color: #29292a; } /* Prismatic */
+.ui-tooltip .icon-socket.socket-16 .empty { background-color: #000; }     /* Sha-touched */
+.ui-tooltip .icon-socket.socket-32 .empty { background-color: #29292a; } /* Cogwheel */
+.ui-tooltip .icon-socket.socket-1  .frame { background-position:  -45px   0; } /* Meta */
+.ui-tooltip .icon-socket.socket-2  .frame { background-position:      0   0; } /* Red */
+.ui-tooltip .icon-socket.socket-4  .frame { background-position:  -15px   0; } /* Yellow */
+.ui-tooltip .icon-socket.socket-8  .frame { background-position:  -30px   0; } /* Blue */
+.ui-tooltip .icon-socket.socket-6  .frame { background-position:  -90px   0; } /* Orange */
+.ui-tooltip .icon-socket.socket-10 .frame { background-position:  -75px   0; } /* Purple */
+.ui-tooltip .icon-socket.socket-12 .frame { background-position: -105px   0; } /* Green */
+.ui-tooltip .icon-socket.socket-14 .frame { background-position:  -60px   0; } /* Prismatic */
+.ui-tooltip .icon-socket.socket-16 .frame { background-position: -120px   0; } /* Sha-touched */
+.ui-tooltip .icon-socket.socket-32 .frame { background-position:  -45px   0; } /* Cogwheel */
+
+/* tooltip */
+.ui-tooltip { position: absolute; z-index: 9005; width: auto; height: auto; max-width: 400px; }
+.ui-tooltip .tooltip-content { width: auto; height: auto; }
+.ui-tooltip table { border-collapse: collapse; border-spacing: 0; }
+.ui-tooltip td { margin: 0; padding: 0 }
+.ui-tooltip .tooltip-frame { background: transparent; border: none; display: none; height: 0; position: absolute; z-index: 999; width: auto; height: auto; max-width: 300px; }
+
+/* item inline links */
+.ui-tooltip .item-link { display: inline-block; line-height: 22px; vertical-align: top; white-space: nowrap; }
+.ui-tooltip .item-link .frame-18 { float: left; margin-right: 5px; }
+.ui-tooltip .item-link .tip { border-bottom: 0; }
+.ui-tooltip .item-link-large { height: 38px; line-height: 38px; }
+.ui-tooltip .item-link-large .frame-36 { float: left; margin-right: 10px; }
+.ui-tooltip .item-link-small, .item-link-small-right { display: inline-block; height: 18px; line-height: 18px; vertical-align: top; }
+.ui-tooltip .item-link-small .frame-14 { float: left; margin-right: 3px; }
+.ui-tooltip .item-link-small-right .count { float: left; }
+.ui-tooltip .item-link-small-right .frame-14 { float: left; margin-left: 4px; }
+
+/* money color/styles override */
+.ui-tooltip .price { text-align: right; }
+.ui-tooltip .icon-gold		{ padding-right: 15px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/gold.gif") right center no-repeat; }
+.ui-tooltip .icon-silver	{ padding-right: 15px; padding-left: 3px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/silver.gif") right center no-repeat; }
+.ui-tooltip .icon-copper	{ padding-right: 15px; padding-left: 3px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/copper.gif") right center no-repeat; }
+
+/* reusable icons */
+.ui-tooltip .icon-wowhead	{ padding-left: 20px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/wowhead.png") left center no-repeat; }
+.ui-tooltip .icon-gold		{ padding-right: 15px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/gold.gif") right center no-repeat; }
+.ui-tooltip .icon-silver	{ padding-right: 15px; padding-left: 3px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/silver.gif") right center no-repeat; }
+.ui-tooltip .icon-copper	{ padding-right: 15px; padding-left: 3px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/copper.gif") right center no-repeat; }
+.ui-tooltip .icon-rss       { background: url("http://www.battlenet.com.cn/wow/static/images/icons/rss.gif") left center no-repeat; }
+.ui-tooltip .icon-next      { background: url("http://www.battlenet.com.cn/wow/static/images/icons/next.gif") 0 0 no-repeat; }
+.ui-tooltip .icon-next:hover{ background-position:0 -18px; }
+.ui-tooltip .icon-dps,
+.ui-tooltip .icon-healing,
+.ui-tooltip .icon-healer,
+.ui-tooltip .icon-tank { float: right; width: 16px; height: 16px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/roles.png") no-repeat; }
+.ui-tooltip .icon-dps    { background-position: 0 0; }
+.ui-tooltip .icon-healer,
+.ui-tooltip .icon-healing { background-position: -16px 0; }
+.ui-tooltip .icon-tank   { background-position: -32px 0; }
+.ui-tooltip .icon-heroic-skull { height: 12px; width: 10px; display: inline-block; background: url("http://www.battlenet.com.cn/wow/static/images/icons/heroic.gif") 50% 50% no-repeat; margin-left: 5px; }
+.ui-tooltip .icon-daily-quest { padding-left: 10px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/daily.gif") 0 50% no-repeat; margin-left: 6px; }
+.ui-tooltip .icon-faction-0,
+.ui-tooltip .icon-faction-1 { height: 15px; width: 15px; display: inline-block; vertical-align: middle; margin-left: 6px; background: url("http://www.battlenet.com.cn/wow/static/images/icons/alliance.png") left center no-repeat; }
+.ui-tooltip .icon-faction-1 { background: url("http://www.battlenet.com.cn/wow/static/images/icons/horde.png") left center no-repeat; }
+.ui-tooltip .icon-achievement-points { padding-left: 11px; background: url(http://www.battlenet.com.cn/wow/static/images/icons/achievements.gif) left center no-repeat; margin-left: 4px; }
+
+.ui-tooltip ol, ul { list-style: none; }
+
+.ui-tooltip em, img, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; }
+.ui-tooltip .float-left { float: left; }
+.ui-tooltip .float-right { float: right; }
+
