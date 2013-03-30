@@ -67,9 +67,8 @@
 	    	if(!$dayRecord) {
 	    		$dayRecord = $this->db(1, "DB_CONFIG_3")->query("SELECT `date`, `time`, `gold_buyout`, `silver_buyout`, `copper_buyout` FROM `%s`
 					WHERE `item_id` = %u
-					ORDER BY `date` DESC, `time` DESC
-					LIMIT 24", 
-					array($this->__GetTable(), $itemId)
+                    AND `date` = '%s'", 
+					array($this->__GetTable(), $itemId, date('Y-m-d'))
 					);
 	    		S($itemId, $dayRecord);
 	    	}
@@ -86,14 +85,14 @@
 	    			)
 	    		);
 	    	if(!$monthRecord) {
-	        	$monthRecord = $this->query("SELECT * FROM(
-					SELECT * FROM `%s`
+	        	$monthRecord = $this->db(1, "DB_CONFIG_3")->query("SELECT * FROM(
+					SELECT `date`, `time`, `gold_buyout`, `silver_buyout`, `copper_buyout` FROM `%s`
 					WHERE `item_id` = %u
 					AND `date` BETWEEN '%s' AND '%s'
 					ORDER BY gold_buyout, silver_buyout, copper_buyout ASC 
 					) AS r
 					GROUP BY `date`", 
-					array($this->__GetTable(), $itemId, $this->__GetDate(0, -1, -1), $this->__GetDate(0, 0, -1))
+					array($this->__GetTable(), $itemId, date("Y") . '-' . date("m") . '-01', date("Y") . '-' . date("m") . '-31')
 					);
 	            S($itemId, $monthRecord);
 	        }
@@ -113,18 +112,6 @@
          */
         private function __GetTable() {
         	return 'w_auction_house_darkiron_' . date('Y');
-        }
-
-        /**
-         * 获取差值日期
-         * Author: Sinute
-         * @param  integer $year  年
-         * @param  integer $month 月
-         * @param  integer $day   日
-         * @return string         当前时间经过参数时间后的日期
-         */
-        private function __GetDate($year = 0, $month = 0, $day = 0) {
-        	return date('Y-m-d', mktime(0, 0, 0, date("m") + $month, date("d") + $day, date("Y") + $year));
         }
 
         /**
