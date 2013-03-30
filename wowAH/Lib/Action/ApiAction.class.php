@@ -6,13 +6,17 @@ class ApiAction extends Action {
      * @param int $itemId
      * @return json
      */
-    public function wowAH($itemId){
+    public function wowAH($itemId, $date = false){
         $result['data'] = array();
         $result['message'] = 'itemId error';
         $result['status'] = false;
-        if(is_numeric($itemId) && $itemId > 0){        
+        if(is_numeric($itemId) && $itemId > 0){
             $itemModel = new ItemModel();
-            $result['data'] = $itemModel->GetAHRecord($itemId);
+            if($date) {
+                $result['data'] = $itemModel->GetDayRecord($itemId, $date);
+            }else{
+                $result['data'] = $itemModel->GetAHRecord($itemId);
+            }
             $result['message'] = 'success';
             $result['status'] = true;
         }

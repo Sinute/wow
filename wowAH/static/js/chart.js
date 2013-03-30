@@ -48,11 +48,12 @@ var lineMonthRecord = d3.svg.line()
     .y(function(d) { return yMonthRecord(d.price); });
 
 function drawChart(url){
+  $(".loading").show();
   d3.json(url, function(error, result) {
     if(error) return;
     if(result.status){
       var dayRecord = [];
-      if(result.data.dayRecord.length > 0) {
+      if(result.data.dayRecord && result.data.dayRecord.length > 0) {
         result.data.dayRecord.forEach(function(d) {
           dayRecord.push({
             'dateTime': parseDateTime(d.date + " " + d.time),
@@ -67,7 +68,7 @@ function drawChart(url){
       }
 
       var monthRecord = [];
-      if(result.data.monthRecord.length > 0) {
+      if(result.data.monthRecord && result.data.monthRecord.length > 0) {
         result.data.monthRecord.forEach(function(d) {
           monthRecord.push({
             'date': parseDate(d.date),
@@ -85,6 +86,11 @@ function drawChart(url){
         $(".not-found").show();
         return;
       }
+
+      if(dayRecord.length > 0) {
+        $("#day-g").remove();
+      }
+
     }else{
       return;
     }
@@ -94,6 +100,7 @@ function drawChart(url){
       var dayRecordSvg = d3.select("#dayRecord").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
+          .attr("id", "day-g")
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -149,6 +156,7 @@ function drawChart(url){
       var monthRecordSvg = d3.select("#monthRecord").append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
+          .attr("id", "month-g")
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -180,6 +188,7 @@ function drawChart(url){
           .attr("class", 'point')
           .attr("cx", function(d) { return xMonthRecord(d.date); })
           .attr("cy", function(d) { return yMonthRecord(d.price); })
+          .attr("date", function(d) { return d.dateStr; })
           .on('mouseover', function(d) {
             $("#tooltip .popover-title").text(d.dateStr);
             $("#tooltip .popover-content").text(d.gold + ' 金 ' + d.silver + ' 银 ' + d.copper + ' 铜');
@@ -193,6 +202,11 @@ function drawChart(url){
             d3.select('#tooltip')
               .style("display", "none");
             d3.select(this).transition().attr('r', 5); 
+          })
+          .on('click', function(d) {
+            if($(this).attr("date") == $("#dayRecord").attr("date")) return false;
+            $("#dayRecord").attr("date", $(this).attr("date"));
+            drawChart(url + "/date/" + $(this).attr("date"));
           })
           .attr("r", 5);
 
