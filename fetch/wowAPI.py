@@ -14,7 +14,7 @@ if sys.argv[1] == '-ah':
 	cookieFilePath = '/home/pi/workspace/wow/fetch/apicookie/'
 
 	wowah = wow.WOW()
-	if not wowah.Login('linyiting7@126.com', 'woaimanlian7', expireTime, cookieFilePath):
+	if not wowah.Login('account', 'password', expireTime, cookieFilePath):
 		print 'Login Falied'
 		sys.exit()
 	print wowah.GetAH(itemId = sys.argv[2])
